@@ -2,14 +2,16 @@
 import { Metadata } from "next";
 import styles from "./homeNotAuth.module.scss";
 import { Container } from "reactstrap";
-import Button from "@/components/button";
+import Button from "@/components/ButtonComponent";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Home",
 };
 
 const HomeNotAuth = () => {
-  const buttonForLogin = "Entrar"
+  const buttonForLogin = "Entrar";
+  const buttonForRegister = "Quero fazer Parte";
   return (
     <main>
       <div className={styles.ctaSection}>
@@ -25,10 +27,15 @@ const HomeNotAuth = () => {
           className={styles.imgCta}
         />
       </div>
-      <Container>
-        <img src="/logoOnebitflix.svg" alt="logo Onebitflix" />
+      <Container className={styles.nav}>
+        <img
+          src="/logoOnebitflix.svg"
+          alt="logo Onebitflix"
+          className={styles.imgLogoNav}
+        />
         <div>
-          <Button label={buttonForLogin} />
+          <Link href="/login"><Button label={buttonForLogin} /></Link>
+          <Link href="/register"><Button label={buttonForRegister} /></Link>
         </div>
       </Container>
     </main>
