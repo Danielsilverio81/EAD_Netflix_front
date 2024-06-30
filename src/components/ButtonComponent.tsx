@@ -3,15 +3,16 @@ import { Button as ReactstrapButton } from "reactstrap";
 import styles from "../app/homeNotAuth.module.scss";
 
 interface ButtonProps {
-  label: string;
+  children: React.ReactNode;
+  style: string
 }
 
-const Button: React.FC<ButtonProps> = ({ label }) => {
+const Button: React.FC<ButtonProps> = ({ children, style }) => {
   return (
     <>
-        <ReactstrapButton className={styles.navBtn} outline>
-          {label}
-        </ReactstrapButton>
+      <ReactstrapButton className={style} outline>
+        {children}
+      </ReactstrapButton>
     </>
   );
 };

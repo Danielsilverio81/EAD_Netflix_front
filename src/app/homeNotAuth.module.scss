@@ -1,5 +1,17 @@
 @use '../styles/colors.module.scss' as c;
 
+.sectionBackground {
+    background-image: linear-gradient(to bottom, #8b8b8b1a, #151515),
+    url("../../public/homeNoAuth/backgroundPresentationSection.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.links {
+        text-decoration: none; 
+}
+
 .ctaSection {
     background-color: c.$lightRed;
     display: flex;
@@ -33,6 +45,49 @@
             background-color: transparent;
         }
     }
+}
+
+.imgPresentation {
+    width: 550px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: c.$lightRed;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.description {
+    font-size: 20px;
+    color: c.$lightGray;
+    margin: 20px 0px 40px 0px;
+}
+.btnCta {
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 14px 30px;
+    border: 2px solid c.$lightRed;
+
+    .btnImg {
+        width: 11px;
+    }
+    &:hover {
+        border-color: c.$darkRed;
+        color: c.$lightGray;
+        background-color: transparent;
+    }
+}
+.arrowDown {
+    width: 30px;
 }
 
 @media (max-width: 451px) {
