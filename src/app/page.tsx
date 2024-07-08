@@ -45,7 +45,10 @@ const HomeNotAuth = () => {
         </Container>
         <Container className="py-4">
           <Row>
-            <Col md className="d-flex flex-column justify-content-center align-items-start">
+            <Col
+              md
+              className="d-flex flex-column justify-content-center align-items-start"
+            >
               <p className={styles.subtitle}>Acesso Ilimitado</p>
               <p className={styles.title}>
                 Tenha acesso aos melhores <br /> tutoriais de programação.
@@ -56,21 +59,91 @@ const HomeNotAuth = () => {
               </p>
               <Link className={styles.links} href="/register">
                 <Button style={styles.btnCta}>
-                  Acesse Agora <img src="/buttonPlay.svg" alt="button img" className={styles.btnImg} />
+                  Acesse Agora{" "}
+                  <img
+                    src="/buttonPlay.svg"
+                    alt="button img"
+                    className={styles.btnImg}
+                  />
                 </Button>
               </Link>
             </Col>
             <Col md>
-            <img src="/homeNoAuth/imgPresentation.png" alt="img Index" className={styles.imgPresentation} />
+              <img
+                src="/homeNoAuth/imgPresentation.png"
+                alt="img Index"
+                className={styles.imgPresentation}
+              />
             </Col>
           </Row>
           <Row>
             <Col className="d-flex justify-content-center pt-5">
-            <img src="/homeNoAuth/iconArrowDown.svg" alt="arrow down" className={styles.arrowDown} />
+              <img
+                src="/homeNoAuth/iconArrowDown.svg"
+                alt="arrow down"
+                className={styles.arrowDown}
+              />
             </Col>
           </Row>
         </Container>
       </div>
+      <p className={styles.sectionTitle}>O QUE VOCÊ VAI ACESSAR</p>
+      <Container className="d-flex flex-wrap justify-content-center gap-4 pb-5">
+        <div className={styles.card1}>
+          <p className={styles.cardTitle}>Front-End</p>
+          <p className={styles.cardDescription}>
+            O Onebitcode Black é o lugar para você evoluir. Para isso, você vai
+            ter acesso às práticas avançadas de programação, atualizações de
+            tecnologias e todo o suporte técnico necessário para ser um sênior
+            na programação.
+          </p>
+        </div>
+        <div className={styles.card2}>
+          <p className={styles.cardTitle}>Back-End</p>
+          <p className={styles.cardDescription}>
+            O Onebitcode Black é o lugar para você evoluir. Para isso, você vai
+            ter acesso às práticas avançadas de programação, atualizações de
+            tecnologias e todo o suporte técnico necessário para ser um sênior
+            na programação.
+          </p>
+        </div>
+        <div className={styles.card3}>
+          <p className={styles.cardTitle}>Mobile</p>
+          <p className={styles.cardDescription}>
+            O Onebitcode Black é o lugar para você evoluir. Para isso, você vai
+            ter acesso às práticas avançadas de programação, atualizações de
+            tecnologias e todo o suporte técnico necessário para ser um sênior
+            na programação.
+          </p>
+        </div>
+        <div className={styles.card4}>
+          <p className={styles.cardTitle}>Git e GitHub</p>
+          <p className={styles.cardDescription}>
+            O Onebitcode Black é o lugar para você evoluir. Para isso, você vai
+            ter acesso às práticas avançadas de programação, atualizações de
+            tecnologias e todo o suporte técnico necessário para ser um sênior
+            na programação.
+          </p>
+        </div>
+        <div className={styles.card5}>
+          <p className={styles.cardTitle}>Projetos</p>
+          <p className={styles.cardDescription}>
+            O Onebitcode Black é o lugar para você evoluir. Para isso, você vai
+            ter acesso às práticas avançadas de programação, atualizações de
+            tecnologias e todo o suporte técnico necessário para ser um sênior
+            na programação.
+          </p>
+        </div>
+        <div className={styles.card6}>
+          <p className={styles.cardTitle}>Carreira</p>
+          <p className={styles.cardDescription}>
+            O Onebitcode Black é o lugar para você evoluir. Para isso, você vai
+            ter acesso às práticas avançadas de programação, atualizações de
+            tecnologias e todo o suporte técnico necessário para ser um sênior
+            na programação.
+          </p>
+        </div>
+      </Container>
     </main>
   );
 };
