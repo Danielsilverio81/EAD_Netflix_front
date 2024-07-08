@@ -1,113 +1,157 @@
-@use '../styles/colors.module.scss' as c;
+@use "../styles/colors.module.scss" as c;
 
 .sectionBackground {
-    background-image: linear-gradient(to bottom, #8b8b8b1a, #151515),
+  background-image: linear-gradient(to bottom, #8b8b8b1a, #151515),
     url("../../public/homeNoAuth/backgroundPresentationSection.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .links {
-        text-decoration: none; 
+  text-decoration: none;
 }
 
 .ctaSection {
-    background-color: c.$lightRed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 0px;
-    gap: 30px;
+  background-color: c.$lightRed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0px;
+  gap: 30px;
 }
 
 .imgCta {
-    width: 20px;
+  width: 20px;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
 
-    .imgLogoNav {
-        width: 180px;
+  .imgLogoNav {
+    width: 180px;
+  }
+  .navBtn {
+    margin: 0px 5px;
+    border-color: transparent;
+    color: c.$lightGray;
+    transition: 0.6s;
+    &:hover {
+      border-color: c.$lightRed;
+      color: white;
+      background-color: transparent;
     }
-    .navBtn {
-        margin: 0px 5px;
-        border-color: transparent;
-        color: c.$lightGray;
-        transition: 0.6s;
-        &:hover{
-            border-color: c.$lightRed;
-            color: white;
-            background-color: transparent;
-        }
-    }
+  }
 }
 
 .imgPresentation {
-    width: 550px;
+  width: 550px;
 }
 
 .subtitle {
-    font-size: 18px;
-    font-weight: bold;
-    color: c.$lightRed;
+  font-size: 18px;
+  font-weight: bold;
+  color: c.$lightRed;
 }
 
 .title {
-    font-size: 40px;
-    font-weight: bold;
-    line-height: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 50px;
 }
 
 .description {
-    font-size: 20px;
-    color: c.$lightGray;
-    margin: 20px 0px 40px 0px;
+  font-size: 20px;
+  color: c.$lightGray;
+  margin: 20px 0px 40px 0px;
 }
 .btnCta {
-    font-weight: bold;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    padding: 14px 30px;
-    border: 2px solid c.$lightRed;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 14px 30px;
+  border: 2px solid c.$lightRed;
 
-    .btnImg {
-        width: 11px;
-    }
-    &:hover {
-        border-color: c.$darkRed;
-        color: c.$lightGray;
-        background-color: transparent;
-    }
+  .btnImg {
+    width: 11px;
+  }
+  &:hover {
+    border-color: c.$darkRed;
+    color: c.$lightGray;
+    background-color: transparent;
+  }
 }
 .arrowDown {
-    width: 30px;
+  width: 30px;
+}
+
+@media (max-width: 1119px) and (min-width: 990px) {
+  .title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 990px) {
+  .imgPresentation {
+    display: flex;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 590px) {
+  .imgPresentation {
+    width: 95%;
+  }
+  .title {
+    font-size: 26px;
+    line-height: 34px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .btnCta {
+    padding: 10px 24px;
+  }
 }
 
 @media (max-width: 451px) {
-    .nav {
-        justify-content: center;
-    }
-    .navBtn {
-        margin: 16px 10px;
-        border-color: white;
-        font-size: 14px;
-    }
-    .ctaSection {
-        gap: 10px;
-    }
+  .nav {
+    justify-content: center;
+  }
+  .navBtn {
+    margin: 16px 10px;
+    border-color: white;
+    font-size: 14px;
+  }
+  .ctaSection {
+    gap: 10px;
+  }
+}
+@media (max-width: 360px) {
+  .subtitle {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .description {
+    font-size: 12px;
+  }
 }
 @media (max-width: 335px) {
-    .ctaSection {
-        text-align: center;
-    }
-    .imgCta {
-        margin: 0px 8px;
-    }
+  .ctaSection {
+    text-align: center;
+  }
+  .imgCta {
+    margin: 0px 8px;
+  }
 }
