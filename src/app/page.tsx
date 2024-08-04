@@ -1,17 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
-import { Metadata } from "next";
+import next, { Metadata } from "next";
 import styles from "./homeNotAuth.module.scss";
 import { Col, Container, Row } from "reactstrap";
 import Button from "@/components/ButtonComponent";
 import Link from "next/link";
+import SlideComponent from "@/components/Common/slideComponent";
+import CourseService, { CourseType } from "@/services/courseService";
+import { ReactNode } from "react";
+interface IndexPageProps {
+  children?: ReactNode
+  course?: CourseType[];
+}
+
+export const revalidate = 3600 * 24
 
 export const metadata: Metadata = {
   title: "Home",
 };
 
-const HomeNotAuth = () => {
+const HomeNotAuth = async({course}: IndexPageProps) => {
   const buttonForLogin = "Entrar";
   const buttonForRegister = "Quero fazer Parte";
+  const buttonForSlide = "Se cadastre para acessar"
+
+  const res = await CourseService.getNewestCourses();
+  console.log('Response data:', res.data);
+  
+  course = Array.isArray(res.data) ? res.data : [];
+  
+
   return (
     <main>
       <div className={styles.sectionBackground}>
@@ -143,6 +160,13 @@ const HomeNotAuth = () => {
             na programação.
           </p>
         </div>
+      </Container>
+      <Container>
+        <p className={styles.sectionTitle}>AULAS JÁ DISPONÍVEIS</p>
+        <SlideComponent course={course}/>
+        <Link href="/register">
+        <Button style={styles.slideSection}>{buttonForSlide}</Button>
+        </Link>
       </Container>
     </main>
   );

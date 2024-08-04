@@ -1,3 +1,5 @@
+
+"use client";
 import { CourseType } from '@/services/courseService';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import  "@splidejs/splide/dist/css/splide.min.css"
