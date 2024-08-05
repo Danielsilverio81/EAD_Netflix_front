@@ -7,9 +7,10 @@ import Link from "next/link";
 import SlideComponent from "@/components/Common/slideComponent";
 import CourseService, { CourseType } from "@/services/courseService";
 import { ReactNode } from "react";
+
 interface IndexPageProps {
   children?: ReactNode
-  course?: CourseType[];
+  course: CourseType[];
 }
 
 export const revalidate = 3600 * 24
@@ -24,9 +25,8 @@ const HomeNotAuth = async({course}: IndexPageProps) => {
   const buttonForSlide = "Se cadastre para acessar"
 
   const res = await CourseService.getNewestCourses();
-  console.log('Response data:', res.data);
   
-  course = Array.isArray(res.data) ? res.data : [];
+  course = res.data;
   
 
   return (
@@ -161,11 +161,11 @@ const HomeNotAuth = async({course}: IndexPageProps) => {
           </p>
         </div>
       </Container>
-      <Container>
+      <Container fluid className="d-flex flex-column align-items-center py-5">
         <p className={styles.sectionTitle}>AULAS JÁ DISPONÍVEIS</p>
         <SlideComponent course={course}/>
         <Link href="/register">
-        <Button style={styles.slideSection}>{buttonForSlide}</Button>
+        <Button style={styles.slideSectionBtn}>{buttonForSlide}</Button>
         </Link>
       </Container>
     </main>

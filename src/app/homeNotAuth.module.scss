@@ -96,6 +96,15 @@
   text-align: center;
   margin: 50px 0px 30px 0px;
 }
+
+.slideSectionBtn {
+  &:hover {
+    border-color: c.$lightRed;
+    background-color: transparent;
+    color: c.$lightGray;
+  }
+}
+
 .card {
   width: 340px;
   height: 280px;
