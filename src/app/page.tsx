@@ -30,6 +30,7 @@ const HomeNotAuth = async({course}: IndexPageProps) => {
   
 
   return (
+  <>
     <main>
       <div className={styles.sectionBackground}>
         <div className={styles.ctaSection}>
@@ -168,7 +169,12 @@ const HomeNotAuth = async({course}: IndexPageProps) => {
         <Button style={styles.slideSectionBtn}>{buttonForSlide}</Button>
         </Link>
       </Container>
+      <Container className={styles.footer}>
+        <img src="/logoOnebitcode.svg" alt="Logo footer" className={styles.footerLogo} />
+        <a href="http://onebitcode.com" target={"_blank"} className={styles.footerLink}>ONEBITCODE.COM</a>
+      </Container>
     </main>
+  </>
   );
 };
 
