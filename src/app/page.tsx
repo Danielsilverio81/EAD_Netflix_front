@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import next, { Metadata } from "next";
+import { Metadata } from "next";
 import styles from "./homeNotAuth.module.scss";
 import { Col, Container, Row } from "reactstrap";
 import Button from "@/components/ButtonComponent";
@@ -8,6 +8,7 @@ import SlideComponent from "@/components/Common/slideComponent";
 import CourseService, { CourseType } from "@/services/courseService";
 import { ReactNode } from "react";
 import AOSInitializer from "@/components/AOSComponent";
+import FooterComponent from "@/components/Common/footer/FooterComponent";
 
 interface IndexPageProps {
   children?: ReactNode;
@@ -181,20 +182,7 @@ const HomeNotAuth = async ({ course }: IndexPageProps) => {
             </Link>
           </Container>
         </div>
-        <Container className={styles.footer}>
-          <img
-            src="/logoOnebitcode.svg"
-            alt="Logo footer"
-            className={styles.footerLogo}
-          />
-          <a
-            href="http://onebitcode.com"
-            target={"_blank"}
-            className={styles.footerLink}
-          >
-            ONEBITCODE.COM
-          </a>
-        </Container>
+      <FooterComponent/>
       </main>
     </>
   );

@@ -1,0 +1,80 @@
+@use "../../../styles/colors.module.scss" as c;
+
+.formTitle {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.form {
+  width: 600px;
+  padding: 50px;
+  border: 1px solid c.$darkGray;
+  margin: 0 auto;
+}
+
+.label {
+  font-size: 14px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.input {
+  border-color: c.$darkGray;
+  background-color: transparent;
+  color: white;
+
+  &::placeholder {
+    color: c.$lightGray;
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: c.$lightGray;
+    color: white;
+    box-shadow: none;
+  }
+}
+
+.inputName {
+  @extend .input;
+  text-transform: uppercase;
+  &::placeholder {
+    text-transform: none;
+  }
+}
+
+.formBtn {
+  display: block;
+  margin: 50px auto 0 auto;
+  border-color: c.$lightRed;
+  color: white;
+
+  &:hover {
+    background-color: transparent;
+    color: c.$lightGray;
+    border-color: c.$darkRed;
+  }
+}
+
+@media (max-width: 425px) {
+  .formTitle {
+    font-size: 24px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .form {
+    padding: 50px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .formTitle {
+    font-size: 30px;
+  }
+  .form {
+    width: 95%;
+  }
+}

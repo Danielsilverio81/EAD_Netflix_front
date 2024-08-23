@@ -1,0 +1,35 @@
+@use "../../../styles/colors.module.scss" as c;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 26px 0px;
+  gap: 16px;
+}
+
+.footerLogo {
+  width: 220px;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: c.$mediumGray;
+  transition: 0.3s;
+
+  &:hover {
+    color: c.$lightGray;
+  }
+}
+
+@media (max-width: 451px) {
+  .footer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 590px) {
+  .footer {
+    padding: 26px 16px;
+  }
+}
