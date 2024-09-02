@@ -3,13 +3,19 @@ import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import styles from "./formStyles.module.scss";
 // @ts-expect-error
 import InputMask from "react-input-mask";
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import authService from "@/services/authService";
+import { useRouter } from "next/navigation";
+import ToastComponent from "../toast";
 
 const FormComponent = () => {
+  const router = useRouter();
+  const [toastIsOpen, setToastIsOpen] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>("");
+
   const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-  
+
     const formData = new FormData(event.currentTarget);
     const firstName = formData.get("firstName")!.toString();
     const lastName = formData.get("lastName")!.toString();
@@ -21,16 +27,25 @@ const FormComponent = () => {
     const params = { firstName, lastName, phone, birth, email, password };
 
     if (password != confirmPassword) {
-      alert("A senha e confirmação de senha são diferentes!");
-    
+      setToastIsOpen(true);
+      setTimeout(() => {
+        setToastIsOpen(false);
+      }, 1000 + 5);
+      setToastMessage("Senha e Confirmação diferentes");
+
       return;
     }
-    const { data, status }= await authService.register(params);
+    const { data, status } = await authService.register(params);
 
     if (status === 201) {
-      alert("Sucesso!");
+      router.push("/login?registred=true");
+      router.refresh();
     } else {
-      alert(data.message);
+      setToastIsOpen(true);
+      setTimeout(() => {
+        setToastIsOpen(false);
+      }, 1000 + 5);
+      setToastMessage(data.message);
     }
   };
   return (
@@ -144,11 +159,12 @@ const FormComponent = () => {
               className={styles.input}
             />
           </FormGroup>
-          <Button  type="submit" outline className={styles.formBtn}>
+          <Button type="submit" outline className={styles.formBtn}>
             CADASTRAR
           </Button>
         </Form>
       </Container>
+      <ToastComponent color="bg-danger" isOpen={toastIsOpen} message={toastMessage}/>
     </>
   );
 };
