@@ -1,0 +1,5 @@
+@use "./../styles/colors.module.scss" as c;
+
+.main {
+    background-image: linear-gradient(to bottom, #151515, black);
+}
