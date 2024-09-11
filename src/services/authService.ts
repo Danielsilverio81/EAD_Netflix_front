@@ -33,7 +33,7 @@ const authService = {
       return error;
     });
     if (res.status === 200) {
-      sessionStorage.setItem("onebitflix-token", res.data.token)
+      sessionStorage.setItem("eadflix-token", res.data.token)
     }
     return res;
   },

@@ -1,0 +1,15 @@
+@use "../../styles/colors.module.scss" as c;
+
+
+.imgLogoNav {
+    width: 160px;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 14px;
+}

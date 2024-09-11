@@ -14,6 +14,13 @@ const FormLoginComponent = () => {
   const searchParams = useSearchParams();
 
   const registerSuccess = searchParams.get("registred");
+
+  useEffect(() => {
+    if(sessionStorage.getItem("eadflix-token")) {
+      router.push("/homeauth")
+    }
+  }, [])
+
   useEffect(() => {
     if (registerSuccess === "true") {
       setToastColor("bg-success");
@@ -25,16 +32,16 @@ const FormLoginComponent = () => {
     }
   }, [registerSuccess]);
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
     const email = formData.get("email")!.toString();
     const password = formData.get("password")!.toString();
-    const params = {email, password};
+    const params = { email, password };
 
-    const {status} = await authService.login(params);
+    const { status } = await authService.login(params);
 
     if (status === 200) {
-      router.push("/home")
+      router.push("/homeauth");
     } else {
       setToastColor("bg-danger");
       setToastIsOpen(true);
@@ -43,7 +50,7 @@ const FormLoginComponent = () => {
       }, 1000 + 7);
       setToastMessage("Erro de Email ou senha incorretos!");
     }
-  }
+  };
   return (
     <>
       <Container className="py-5">
@@ -82,7 +89,11 @@ const FormLoginComponent = () => {
             ENTRAR
           </Button>
         </Form>
-        <ToastComponent color={toastColor} isOpen={toastIsOpen} message={toastMessage}/>
+        <ToastComponent
+          color={toastColor}
+          isOpen={toastIsOpen}
+          message={toastMessage}
+        />
       </Container>
     </>
   );

@@ -1,0 +1,36 @@
+@use "../../../../styles/colors.module.scss" as c;
+
+.searchImg {
+    width: 26px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.userProfile {
+    font-weight: bold;
+    font-size: 24px;
+    background-color: white;
+    color: black;
+    text-transform: uppercase;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 14px;
+    cursor: pointer;
+}
+
+.input {
+    background-color: transparent;
+    color: white;
+    border-color: c.$lightGray;
+    &:focus {
+        background-color: transparent;
+        color: white;
+        border-color: c.$mediumGray;
+        box-shadow: none;
+    }
+    &::placeholder {
+        color: white;
+      }
+}

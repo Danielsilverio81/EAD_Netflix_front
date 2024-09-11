@@ -3,7 +3,7 @@ import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
 import styles from "./formStyles.module.scss";
 // @ts-expect-error
 import InputMask from "react-input-mask";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import authService from "@/services/authService";
 import { useRouter } from "next/navigation";
 import ToastComponent from "../toast";
@@ -12,6 +12,12 @@ const FormComponent = () => {
   const router = useRouter();
   const [toastIsOpen, setToastIsOpen] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>("");
+
+  useEffect(() => {
+    if(sessionStorage.getItem("eadflix-token")) {
+      router.push("/homeauth")
+    }
+  }, [])
 
   const handleRegister = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
