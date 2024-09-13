@@ -13,3 +13,10 @@
     align-items: center;
     padding: 24px 14px;
 }
+
+@media (max-width: 767px) {
+    .nav {
+        justify-content: center;
+        gap: 20px;
+    }
+}

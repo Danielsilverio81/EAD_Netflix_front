@@ -23,7 +23,7 @@ const HomeAuth = () => {
               className={styles.imgLogoNav}
             />
           </Link>
-        <FormHomeAuth/>
+          <FormHomeAuth />
         </Container>
       </main>
     </>
