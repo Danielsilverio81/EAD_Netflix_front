@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import styles from "../../styles/registerLogin.module.scss";
-import HeaderGeneric from "@/components/Common/headerGeneric";
+import HeaderGeneric from "@/components/headerGenericComponent";
 import FormLoginComponent from "@/components/Common/forms/FormLoginComponent";
 import FooterComponent from "@/components/Common/footer/FooterComponent";
 

@@ -1,8 +1,5 @@
 import { Metadata } from "next";
-import { Container } from "reactstrap";
-import styles from "./styles.module.scss";
-import Link from "next/link";
-import FormHomeAuth from "@/components/Common/forms/formHomeAuthComponent/formHomeAuth";
+import FeaturedSection from "@/components/featuredSection";
 
 export const metadata: Metadata = {
   icons: {
@@ -15,16 +12,7 @@ const HomeAuth = () => {
   return (
     <>
       <main>
-        <Container className={styles.nav}>
-          <Link href="/homeauth">
-            <img
-              src="/logoOnebitflix.svg"
-              alt="logo"
-              className={styles.imgLogoNav}
-            />
-          </Link>
-          <FormHomeAuth />
-        </Container>
+        <FeaturedSection/>
       </main>
     </>
   );

@@ -4,7 +4,7 @@ import styles from "./homeNotAuth.module.scss";
 import { Col, Container, Row } from "reactstrap";
 import Button from "@/components/ButtonComponent";
 import Link from "next/link";
-import SlideComponent from "@/components/Common/slideComponent";
+import SlideComponent from "@/components/slideComponent";
 import CourseService, { CourseType } from "@/services/courseService";
 import { ReactNode } from "react";
 import AOSInitializer from "@/components/AOSComponent";

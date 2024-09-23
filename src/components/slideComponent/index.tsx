@@ -3,7 +3,7 @@ import { CourseType } from "@/services/courseService";
 // @ts-expect-error
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
-import SlideCard from "../slideCard";
+import SlideCard from "../slideCardComponent";
 
 interface props {
   course: CourseType[];

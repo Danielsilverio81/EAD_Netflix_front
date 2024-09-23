@@ -1,4 +1,4 @@
-import HeaderGeneric from "@/components/Common/headerGeneric";
+import HeaderGeneric from "@/components/headerGenericComponent";
 import { Metadata } from "next";
 import FormComponent from "@/components/Common/forms/FormRegisterComponent";
 import FooterComponent from "@/components/Common/footer/FooterComponent";
