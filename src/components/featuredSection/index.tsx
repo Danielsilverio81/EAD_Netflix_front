@@ -9,10 +9,11 @@ const FeaturedSection = () => {
   const { data, error } = useSWR("/featured", CourseService.getFeaturedCourses);
   if (error) return error;
   if (!data) {
-    return;
+    return(
     <>
-      <p>Loading...</p>
-    </>;
+      <p>Loading courses...</p>
+    </>
+    )
   }
   return (
     <>

@@ -1,0 +1,47 @@
+.sectionLoading {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    font-size: 50px;
+    font-weight: bold;
+    color: blue;
+}
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .loaderDot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    margin: 0 10px;
+    animation: loader-dot 1.5s infinite ease-in-out;
+    animation-delay: calc(0.5s);
+  }
+  
+  .loaderDot:nth-child(2) {
+    animation-delay: calc(0.5s + 0.25s);
+  }
+  
+  .loaderDot:nth-child(3) {
+    animation-delay: calc(0.5s + 0.5s);
+  }
+  
+  @keyframes loaderDot {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
