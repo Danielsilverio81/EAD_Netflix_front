@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import FeaturedSection from "@/components/featuredSection";
 import NewestCategory from "@/components/newestCategory";
+import FavoriteCategory from "@/components/favoriteCategory";
 
 export const metadata: Metadata = {
   icons: {
@@ -13,8 +14,9 @@ const HomeAuth = () => {
   return (
     <>
       <main>
-        <FeaturedSection/>
+        <FeaturedSection />
         <NewestCategory />
+        <FavoriteCategory />
       </main>
     </>
   );
