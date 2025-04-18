@@ -4,6 +4,7 @@ import NewestCategory from "@/components/newestCategory";
 import FavoriteCategory from "@/components/favoriteCategory";
 import FeaturedCategory from "@/components/featuredCategory";
 import ListCategories from "@/components/listCategories";
+import FooterComponent from "@/components/Common/footer/FooterComponent";
 
 export const metadata: Metadata = {
   icons: {
@@ -21,6 +22,7 @@ const HomeAuth = () => {
         <FavoriteCategory />
         <FeaturedCategory />
         <ListCategories />
+        <FooterComponent/>
       </main>
     </>
   );
