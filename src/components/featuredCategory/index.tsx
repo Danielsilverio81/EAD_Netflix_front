@@ -2,7 +2,8 @@
 import CourseService from "@/services/courseService";
 import useSWR from "swr";
 import styles from "../../styles/slideCategory.module.scss";
-import SlideComponent from "../slideComponent";
+import SlideComponent from "../slides/slideComponent";
+import stylesLoading from "../../styles/loadingCourses.module.scss";
 
 const FeaturedCategory = () => {
   const { data, error } = useSWR("/featured", CourseService.getFeaturedCourses);
@@ -10,14 +11,17 @@ const FeaturedCategory = () => {
   if (!data)
     return (
       <>
-        <p>Loading courses...</p>
+        <div className={stylesLoading.loadingContainer}>
+          <div className={stylesLoading.spinner} />
+          <p className={stylesLoading.text}>Carregando...</p>
+        </div>
       </>
     );
-  return(
-  <>
-    <p className={styles.titleCategory}>EM DESTAQUE</p>
-    <SlideComponent course={data.data} />
-  </>
+  return (
+    <>
+      <p className={styles.titleCategory}>EM DESTAQUE</p>
+      <SlideComponent course={data.data} />
+    </>
   );
 };
 

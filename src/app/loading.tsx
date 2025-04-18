@@ -1,17 +1,12 @@
-import styles from "../styles/loading.module.scss"
-export default function Loading() {
+import styles from "../styles/loading.module.scss";
+
+const LoadingPage = () => {
   return (
-    <>
-      <div className={styles.main}>
-        <div className={styles.sectionLoading}>
-            <p className={styles.titleLoading}>Loading Page</p>
-            <div className={styles.loader}>
-              <div className={styles.loaderDot}></div>
-              <div className={styles.loaderDot}></div>
-              <div className={styles.loaderDot}></div>
-            </div>
-        </div>
-      </div>
-    </>
+    <div className={styles.loadingPage}>
+      <div className={styles.spinner} />
+      <p className={styles.loadingText}>Carregando...</p>
+    </div>
   );
-}
+};
+
+export default LoadingPage;

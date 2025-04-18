@@ -5,15 +5,20 @@ import CourseService, { CourseType } from "@/services/courseService";
 import HeaderAuthComponent from "../headerAuthComponent";
 import { Button, Container } from "reactstrap";
 import Link from "next/link";
+import stylesLoading from "../../styles/loadingCourses.module.scss";
+
 const FeaturedSection = () => {
   const { data, error } = useSWR("/featured", CourseService.getFeaturedCourses);
   if (error) return error;
   if (!data) {
-    return(
-    <>
-      <p>Loading courses...</p>
-    </>
-    )
+    return (
+      <>
+        <div className={stylesLoading.loadingContainer}>
+          <div className={stylesLoading.spinner} />
+          <p className={stylesLoading.text}>Carregando...</p>
+        </div>
+      </>
+    );
   }
   return (
     <>
@@ -24,7 +29,7 @@ const FeaturedSection = () => {
               backgroundImage: `linear-gradient(to bottom, #6666661a, #151515),url(${process.env.NEXT_PUBLIC_BASEURL}/${course.thumbnailUrl})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              height: "485px"
+              height: "480px",
             }}
             key={course.id}
           >

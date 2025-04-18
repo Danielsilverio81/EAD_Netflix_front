@@ -1,53 +1,30 @@
-.main {
+.loadingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  width: 100vw;
-  background-color: #333;
+  background-color: #f9fafb;
 }
 
-.sectionLoading {
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-direction: column;
-    font-size: 50px;
-    font-weight: bold;
-    color: blue;
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #3b82f6;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 }
-.loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+
+.loadingText {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
-  
-  .loaderDot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #333;
-    margin: 0 10px;
-    animation: loader-dot 1.5s infinite ease-in-out;
-    animation-delay: calc(0.5s);
-  }
-  
-  .loaderDot:nth-child(2) {
-    animation-delay: calc(0.5s + 0.25s);
-  }
-  
-  .loaderDot:nth-child(3) {
-    animation-delay: calc(0.5s + 0.5s);
-  }
-  
-  @keyframes loaderDot {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+}
