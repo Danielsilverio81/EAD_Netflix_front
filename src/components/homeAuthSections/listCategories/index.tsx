@@ -1,8 +1,8 @@
 "use client";
 import categoriesService, { CategoryType } from "@/services/categoryServices";
 import useSWR from "swr";
-import stylesLoading from "../../styles/loadingCourses.module.scss";
-import ListCategoriesSlide from "../slides/slideListCategory";
+import ListCategoriesSlide from "../../slides/slideListCategory";
+import stylesLoading from "../../../styles/loadingCourses.module.scss";
 
 const ListCategories = () => {
   const { data, error } = useSWR(

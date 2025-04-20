@@ -1,12 +1,12 @@
 "use client";
 import CourseService from "@/services/courseService";
 import useSWR from "swr";
-import SlideComponent from "../slides/slideComponent";
-import styles from "../../styles/slideCategory.module.scss";
-import stylesLoading from "../../styles/loadingCourses.module.scss";
+import SlideComponent from "../../slides/slideComponent";
+import stylesLoading from "../../../styles/loadingCourses.module.scss";
+import styles from "../../../styles/slideCategory.module.scss";
 
-const NewestCategory = () => {
-  const { data, error } = useSWR("/newest", CourseService.getNewestCourses);
+const FeaturedCategory = () => {
+  const { data, error } = useSWR("/featured", CourseService.getFeaturedCourses);
   if (error) return error;
   if (!data)
     return (
@@ -19,10 +19,10 @@ const NewestCategory = () => {
     );
   return (
     <>
-      <p className={styles.titleCategory}>LANÇAMENTOS</p>
+      <p className={styles.titleCategory}>EM DESTAQUE</p>
       <SlideComponent course={data.data} />
     </>
   );
 };
 
-export default NewestCategory;
+export default FeaturedCategory;

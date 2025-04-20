@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "reactstrap";
-import FormHomeAuth from "../Common/forms/formHomeAuthComponent/formHomeAuth";
+import FormHomeAuth from "../../Common/forms/formHomeAuthComponent/formHomeAuth";
 import styles from "./styles.module.scss";
 
 const HeaderAuthComponent = () => {

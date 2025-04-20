@@ -1,0 +1,43 @@
+@use "../../../../styles/colors.module.scss" as c;
+
+.header {
+  background-color: black;
+}
+
+.title {
+  font-size: 45px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+
+.renderForm {
+  display: block;
+  width: 200px;
+  border: 1px solid c.$darkGray;
+  background: transparent;
+  font-weight: bold;
+  margin: 2px auto;
+  padding: 14px 0px;
+  &:hover {
+    background: transparent;
+    border-color: c.$lightRed;
+    color: c.$lightGray;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .title {
+    text-align: center;
+  }
+  .btnColumn {
+    width: 95%;
+    margin-bottom: 40px;
+  }
+}

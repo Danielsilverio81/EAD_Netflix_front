@@ -37,11 +37,14 @@ const SlideComponent = ({ course }: props) => {
                 drag: course.length > 2 ? true : false ,
               },
               600: {
-                perPge: 1,
+                perPage: 1,
                 width: 300,
-                arrows: course.length > 1? true : false ,
+                arrows: course.length > 1 ? true : false ,
                 drag: course.length > 1 ? true : false ,
-              }
+              },
+              300: {
+                width: 250,
+              },
             }
           }}
         >

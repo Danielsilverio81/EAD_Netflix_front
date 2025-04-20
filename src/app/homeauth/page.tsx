@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import FeaturedSection from "@/components/featuredSection";
-import NewestCategory from "@/components/newestCategory";
-import FavoriteCategory from "@/components/favoriteCategory";
-import FeaturedCategory from "@/components/featuredCategory";
-import ListCategories from "@/components/listCategories";
+import FeaturedSection from "@/components/homeAuthSections/featuredSection";
+import NewestCategory from "@/components/homeAuthSections/newestCategory";
+import FavoriteCategory from "@/components/homeAuthSections/favoriteCategory";
+import FeaturedCategory from "@/components/homeAuthSections/featuredCategory";
+import ListCategories from "@/components/homeAuthSections/listCategories";
 import FooterComponent from "@/components/Common/footer/FooterComponent";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ const HomeAuth = () => {
         <FavoriteCategory />
         <FeaturedCategory />
         <ListCategories />
-        <FooterComponent/>
+        <FooterComponent />
       </main>
     </>
   );

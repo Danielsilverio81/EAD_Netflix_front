@@ -2,10 +2,10 @@
 import styles from "./styles.module.scss";
 import useSWR from "swr";
 import CourseService, { CourseType } from "@/services/courseService";
-import HeaderAuthComponent from "../headerAuthComponent";
+import HeaderAuthComponent from "../../pagesComponents/headerAuthComponent";
 import { Button, Container } from "reactstrap";
 import Link from "next/link";
-import stylesLoading from "../../styles/loadingCourses.module.scss";
+import stylesLoading from "../../../styles/loadingCourses.module.scss";
 
 const FeaturedSection = () => {
   const { data, error } = useSWR("/featured", CourseService.getFeaturedCourses);

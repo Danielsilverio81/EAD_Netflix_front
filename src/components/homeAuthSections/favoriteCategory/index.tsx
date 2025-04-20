@@ -1,9 +1,9 @@
 "use client";
 import CourseService from "@/services/courseService";
-import styles from "../../styles/slideCategory.module.scss";
+import stylesLoading from "../../../styles/loadingCourses.module.scss";
+import styles from "../../../styles/slideCategory.module.scss";
 import useSWR from "swr";
-import SlideComponent from "../slides/slideComponent";
-import stylesLoading from "../../styles/loadingCourses.module.scss";
+import SlideComponent from "../../slides/slideComponent";
 
 const FavoriteCategory = () => {
   const { data, error } = useSWR("/favorites", CourseService.getFavCourses);
@@ -23,8 +23,8 @@ const FavoriteCategory = () => {
       {data.data.courses.length >= 1 ? (
         <SlideComponent course={data.data.courses} />
       ) : (
-        <p className="text-center pt-4 h5">
-          <strong>Você não tem nenhum curso na lista!</strong>
+        <p className="text-center pt-3 h5">
+          <strong>Você não tem favoritos!</strong>
         </p>
       )}
     </>

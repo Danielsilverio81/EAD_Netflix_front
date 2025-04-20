@@ -15,7 +15,7 @@ interface IndexPageProps {
   course: CourseType[];
 }
 
-export const revalidate = 3600 * 24;
+export const revalidate = 1800;
 
 export const metadata: Metadata = {
   title: "Home",

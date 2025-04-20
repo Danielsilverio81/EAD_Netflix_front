@@ -6,3 +6,10 @@
     margin-top: 40px;
     margin-left: 7%;
 }
+
+@media (max-width: 400px) {
+    .titleCategory {
+        font-size: 18px;
+        margin-left: 5%;
+    }
+}
