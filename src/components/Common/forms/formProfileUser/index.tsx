@@ -4,8 +4,10 @@ import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import profileService from "@/services/profileService";
 import ToastComponent from "../../toast";
+import { useRouter } from "next/router";
 
 const FormUserProfile = () => {
+  const router = useRouter();
   const [color, setColor] = useState<string>("");
   const [toastIsOpen, setToastIsOpen] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -13,7 +15,10 @@ const FormUserProfile = () => {
   const [lastName, setLastName] = useState<string>("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState<string>("");
+  const [initialEmail, setInitialEmail] = useState<string>(email);
   const [created_at, setCreated_at] = useState<string>("");
+  const date = new Date(created_at);
+  const month = date.toLocaleDateString("default", { month: "long" });
 
   useEffect(() => {
     profileService.fetchCurrent().then((user) => {
@@ -21,6 +26,7 @@ const FormUserProfile = () => {
       setLastName(user.lastName);
       setPhone(user.phone);
       setEmail(user.email);
+      setInitialEmail(user.email);
       setCreated_at(user.createdAt);
     });
   }, []);
@@ -42,6 +48,10 @@ const FormUserProfile = () => {
       setTimeout(() => {
         setToastIsOpen(false);
       }, 1000 * 3);
+      if (email !== initialEmail) {
+        sessionStorage.clear();
+        router.push('/')
+      }
     } else {
       setToastIsOpen(true);
       setErrorMessage("Você não pode mudar para esse email!");
@@ -68,7 +78,7 @@ const FormUserProfile = () => {
             alt="iconProfile"
           />
           <p className={styles.memberTimeText}>
-            Membro desde <br /> 20 de Abril de 2020
+            Membro desde <br /> {`${date.getDate()}} de ${month} de ${date.getFullYear()}`} 
           </p>
         </div>
         <hr />

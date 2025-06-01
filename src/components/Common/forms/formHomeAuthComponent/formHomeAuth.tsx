@@ -2,15 +2,26 @@
 import { Form, Input } from "reactstrap";
 import styles from "./formHomeAuthStyles.module.scss";
 import Modal from "react-modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import profileService from "@/services/profileService";
 
 Modal.setAppElement("body")
 
 const FormHomeAuth = () => {
   const router = useRouter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [initials, setInitials] = useState<string>(""); // Placeholder for initials
+
+  useEffect(() => {
+    profileService.fetchCurrent().then((user) => {
+      const firstNameInitial = user.firstName.slice(0, 1).toUpperCase();
+      const lastNameInitial = user.lastName.slice(0, 1).toUpperCase();
+      setInitials(`${firstNameInitial}${lastNameInitial}`);
+  });
+}, []);
+
   const handleOpenModal = () => {
     setModalOpen(true);
   };
@@ -38,7 +49,7 @@ const FormHomeAuth = () => {
           className={styles.searchImg}
         />
         <p className={styles.userProfile} onClick={handleOpenModal}>
-          AB
+          {initials}
         </p>
       </div>
       <Modal
